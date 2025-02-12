@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "target": "ESNext", // 指定编译产物的 JS 版本
+    "module": "ESNext", // 指定编译产物的模块格式。它的默认值与target属性有关，如果target是ES3或ES5，它的默认值是commonjs，否则就是ES6/ES2015
+    "moduleResolution": "bundler", // 确定模块路径的算法它的默认值与module属性有关，如果module为AMD、UMD、System或ES6/ES2015，默认值为classic；如果module为node16或nodenext，默认值为这两个值；其他情况下,默认值为Node。
     "strict": false,
-    "jsx": "preserve",
+    "jsx": "preserve",  // 设置如何处理.tsx文件 preserve：保持 jsx 语法不变，输出的文件名为.jsx
     "importHelpers": true,
     "experimentalDecorators": true,
     "strictFunctionTypes": false,
@@ -14,29 +14,24 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
-    "baseUrl": ".",
-    "allowJs": false,
+    "baseUrl": ".",  // 指定 TypeScript 项目的基准目录,默认是以 tsconfig.json 的位置作为基准目录./
+    "allowJs": false,  // 允许 TypeScript 项目加载 JS 脚本。编译时，也会将 JS 文件，一起拷贝到输出目录
     "resolveJsonModule": true,
-    "lib": [
-      "ESNext",
-      "DOM"
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@build/*": [
-        "build/*"
-      ]
+    "lib": ["ESNext","DOM"],  // 需要加载的 TypeScript 内置类型描述文件 https://github.com/microsoft/TypeScript/tree/main/src/lib
+    "paths": {      // paths设置模块名和模块路径的映射，也就是 TypeScript 如何导入require或imports语句加载的模块
+      "@/*": [ "src/*"],
+      "@build/*": ["build/*"]
     },
+     // 默认情况下，typeRoots目录下所有模块都会自动加入编译，如果指定了types属性，那么只有其中列出的模块才会自动加入编译
     "types": [
       "node",
       "vite/client",
       "element-plus/global",
-      "@pureadmin/table/volar",
-      "@pureadmin/descriptions/volar"
-    ]
+    ],
+      // 类型模块所在的目录，默认是node_modules/@types，该目录里面的模块会自动加入编译。一旦指定了该属性，就不会再用默认值node_modules/@types里面的类型模块。
+    "typeRoots": ["./node_modules/@types/", "./types"]
   },
+    // 指定哪些文件需要编译
   "include": [
     "mock/*.ts",
     "src/**/*.ts",
@@ -45,6 +40,7 @@
     "types/*.d.ts",
     "vite.config.ts"
   ],
+    // 用来从编译列表中去除指定的文件 与include 相反
   "exclude": [
     "dist",
     "**/*.js",
