@@ -1,0 +1,16 @@
+.git
+.idea
+.vscode
+.dist
+.svn
+.hg
+coverages
+jsconfig.json
+node_modules
+dist
+
+**/*.png
+**/*.svg
+**/*.jpeg
+**/*.md
+**/*.gif

@@ -5,7 +5,12 @@ dist-ssr
 *.local
 .eslintcache
 report.html
-vite.config.*.timestamp*
+/dist
+_mac
+
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+
 
 yarn.lock
 npm-debug.log*
@@ -20,3 +25,37 @@ tests/**/coverage/
 *.njsproj
 *.sln
 tsconfig.tsbuildinfo
+
+# local env files
+.env.local
+.env.*.local
+
+# special file
+*.zip
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+# *.sw*
+debug.log
+
+# css
+*.map
+
+# 其他
+*.log
+jsconfig.json
+
+.idea
+.eslintcache
+
+.git
+.eslintcache

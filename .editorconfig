@@ -1,13 +1,14 @@
 # http://editorconfig.org
+# 统一编辑器的配置
 root = true
 
 [*]
 charset = utf-8
-indent_style = space
-indent_size = 2
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
+indent_style = space # 设置为制表符或空格以分别使用硬制表符或软制表符
+indent_size = 4  # 定义每个缩进级别使用的列数和软制表符的宽度
+end_of_line = lf  # 换行风格
+insert_final_newline = true # 所有文件都会被设置为以一个空行结尾
+trim_trailing_whitespace = true # 所有文件都会被设置为保存时移除行尾的空白字符
 
 [*.md]
 insert_final_newline = false
