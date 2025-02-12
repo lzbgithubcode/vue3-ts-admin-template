@@ -288,7 +288,7 @@
 <template>
     <LayPanel>
         <div class="m-body-panel">
-            <p :class="pClass">整体风格</p>
+            <!-- <p :class="pClass">整体风格</p>
             <Segmented
                 resize
                 class="select-none"
@@ -301,9 +301,9 @@
                         dataThemeChange(theme.option.theme);
                         theme.index === 2 && watchSystemThemeChange();
                     }
-                " />
+                " /> -->
 
-            <p :class="['mt-5', pClass]">主题色</p>
+            <p :class="pClass">主题色</p>
             <ul class="theme-color">
                 <li
                     v-for="(item, index) in themeColors"
@@ -356,7 +356,7 @@
                 </li>
             </ul>
 
-            <span v-if="useAppStoreHook().getViewportWidth > 1280">
+            <!-- <span v-if="useAppStoreHook().getViewportWidth > 1280">
                 <p :class="['mt-5', pClass]">页宽</p>
                 <Segmented
                     resize
@@ -382,7 +382,7 @@
                         <IconifyIconOffline :icon="settings.stretch ? LeftArrow : RightArrow" height="20" />
                     </div>
                 </button>
-            </span>
+            </span> -->
 
             <p :class="['mt-4', pClass]">页签风格</p>
             <Segmented
