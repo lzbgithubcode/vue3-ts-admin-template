@@ -47,6 +47,7 @@ export default defineFlatConfig([
         plugins: {
             prettier: pluginPrettier
         },
+
         rules: {
             ...configPrettier.rules,
             ...pluginPrettier.configs.recommended.rules,
@@ -91,13 +92,7 @@ export default defineFlatConfig([
             "@typescript-eslint/no-unsafe-function-type": "off",
             "@typescript-eslint/no-import-type-side-effects": "error",
             "@typescript-eslint/explicit-module-boundary-types": "off",
-            "@typescript-eslint/consistent-type-imports": [
-                "error",
-                {
-                    disallowTypeAnnotations: false,
-                    fixStyle: "inline-type-imports"
-                }
-            ],
+            "@typescript-eslint/consistent-type-imports": ["error", { disallowTypeAnnotations: false, fixStyle: "inline-type-imports" }],
             "@typescript-eslint/prefer-literal-enum-member": ["error", { allowBitwiseExpressions: true }],
             "@typescript-eslint/no-unused-vars": [
                 "error",

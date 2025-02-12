@@ -1,6 +1,5 @@
 {
-    "*.{js,jsx,ts,tsx}": ["prettier --cache --ignore-unknown  --write", "eslint --cache --fix"],
-    "{!(package)*.json,*.code-snippets,.!({browserslist,npm,nvm})*rc}": ["prettier --cache --write--parser json"],
+    "src/*.{js,jsx,ts,tsx}": ["prettier --cache --ignore-unknown  --write", "eslint --cache --fix --max-warnings 0 "],
     "package.json": ["prettier --cache --write"],
     "*.vue": ["prettier --write", "eslint --cache --fix", "stylelint --fix --allow-empty-input"],
     "*.{css,scss,html}": ["prettier --cache --ignore-unknown --write", "stylelint --fix --allow-empty-input"]

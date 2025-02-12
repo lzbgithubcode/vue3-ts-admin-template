@@ -42,7 +42,7 @@ const __APP_INFO__ = {
 };
 
 /** 处理环境变量 */
-const wrapperEnv = (envConf: Recordable): ViteEnv => {
+const loadCustomEnv = (envConf: Recordable): ViteEnv => {
     // 默认值
     const ret: ViteEnv = {
         VITE_PORT: 8848,
@@ -99,4 +99,4 @@ const getPackageSize = (options) => {
     });
 };
 
-export { root, pathResolve, alias, __APP_INFO__, wrapperEnv, getPackageSize };
+export { root, pathResolve, alias, __APP_INFO__, loadCustomEnv, getPackageSize };
