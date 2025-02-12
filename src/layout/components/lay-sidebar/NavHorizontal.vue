@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { emitter } from "@/utils/mitt";
     import { useNav } from "@/layout/hooks/useNav";
-    import LaySearch from "../lay-search/index.vue";
+
     import LayNotice from "../lay-notice/index.vue";
     import { responsiveStorageNameSpace } from "@/config";
     import { ref, nextTick, computed, onMounted } from "vue";
@@ -41,8 +41,6 @@
             <LaySidebarItem v-for="route in usePermissionStoreHook().wholeMenus" :key="route.path" :item="route" :base-path="route.path" />
         </el-menu>
         <div class="horizontal-header-right">
-            <!-- 菜单搜索 -->
-            <LaySearch id="header-search" />
             <!-- 全屏 -->
             <LaySidebarFullScreen id="full-screen" />
             <!-- 消息通知 -->
