@@ -287,7 +287,7 @@
 
 <template>
     <LayPanel>
-        <div class="p-5">
+        <div class="m-body-panel">
             <p :class="pClass">整体风格</p>
             <Segmented
                 resize
@@ -376,7 +376,7 @@
                     v-ripple="{ class: 'text-gray-300' }"
                     class="bg-transparent flex-c w-full h-20 rounded-md border border-[var(--pure-border-color)]"
                     @click="setStretch(!settings.stretch)">
-                    <div class="flex-bc transition-all duration-300" :class="[settings.stretch ? 'w-[24%]' : 'w-[50%]']" style="color: var(--el-color-primary)">
+                    <div class="transition-all duration-300" :class="[settings.stretch ? 'w-[24%]' : 'w-[50%]']" style="color: var(--el-color-primary)">
                         <IconifyIconOffline :icon="settings.stretch ? RightArrow : LeftArrow" height="20" />
                         <div class="flex-grow border-b border-dashed" style="border-color: var(--el-color-primary)" />
                         <IconifyIconOffline :icon="settings.stretch ? LeftArrow : RightArrow" height="20" />
@@ -431,6 +431,10 @@
 </template>
 
 <style lang="scss" scoped>
+    .m-body-panel {
+        padding: 1.25rem;
+    }
+
     :deep(.el-divider__text) {
         font-size: 16px;
         font-weight: 700;
@@ -445,6 +449,12 @@
 
     :deep(.el-switch__core .el-switch__action) {
         height: 14px;
+    }
+
+    .flex-bc {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .theme-color {

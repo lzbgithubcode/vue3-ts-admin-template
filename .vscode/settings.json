@@ -10,6 +10,7 @@
   "files.autoSave": "afterDelay",
   "git.confirmSync": false,
   "workbench.startupEditor": "newUntitledFile",
+  "vetur.validation.script": false,
   "editor.suggestSelection": "first",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "css.lint.propertyIgnoredDueToDisplay": "ignore",

@@ -49,7 +49,7 @@
             <LayNotice id="header-notice" />
             <!-- 退出登录 -->
             <el-dropdown trigger="click">
-                <span class="el-dropdown-link navbar-bg-hover">
+                <span class="el-dropdown-link">
                     <img :src="userAvatar" :style="avatarsStyle" />
                     <p v-if="username" class="dark:text-white">{{ username }}</p>
                 </span>
@@ -57,12 +57,12 @@
                     <el-dropdown-menu class="logout">
                         <el-dropdown-item @click="logout">
                             <IconifyIconOffline :icon="LogoutCircleRLine" style="margin: 5px" />
-                            退出系统
+                            <span>退出系统</span>
                         </el-dropdown-item>
                     </el-dropdown-menu>
                 </template>
             </el-dropdown>
-            <span class="set-icon navbar-bg-hover" title="打开系统配置" @click="onPanel">
+            <span class="set-icon" title="打开系统配置" @click="onPanel">
                 <IconifyIconOffline :icon="Setting" />
             </span>
         </div>

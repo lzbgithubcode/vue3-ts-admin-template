@@ -15,7 +15,7 @@
 
 <template>
     <el-dropdown trigger="click" placement="bottom-end">
-        <span :class="['dropdown-badge', 'navbar-bg-hover', 'select-none', Number(noticesNum) !== 0 && 'mr-[10px]']">
+        <span :class="['dropdown-badge', 'select-none', Number(noticesNum) !== 0 && 'mr-[10px]']">
             <el-badge :value="Number(noticesNum) === 0 ? '' : noticesNum" :max="99">
                 <span class="header-notice-icon">
                     <IconifyIconOffline :icon="BellIcon" />
