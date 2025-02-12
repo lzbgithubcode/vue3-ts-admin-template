@@ -10,6 +10,8 @@ import { visualizer } from "rollup-plugin-visualizer";
 import removeConsole from "vite-plugin-remove-console";
 import { codeInspectorPlugin } from "code-inspector-plugin";
 import { vitePluginFakeServer } from "vite-plugin-fake-server";
+// import legacy from '@vitejs/plugin-legacy';
+
 
 export function getPluginsList(VITE_CDN: boolean, VITE_COMPRESSION: ViteCompression): PluginOption[] {
     const lifecycle = process.env.npm_lifecycle_event;
@@ -41,6 +43,28 @@ export function getPluginsList(VITE_CDN: boolean, VITE_COMPRESSION: ViteCompress
             infixName: false,
             enableProd: true
         }),
+        // 旧版浏览器兼容插件
+        // legacy({
+        //     additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+        //     renderLegacyChunks: true,
+        //     polyfills: [
+        //         'es.symbol',
+        //         'es.promise',
+        //         'es.promise.finally',
+        //         'es.map',
+        //         'es.set',
+        //         'es.array.filter',
+        //         'es.object.define-properties',
+        //         'es.object.define-property',
+        //         'es.object.get-own-property-descriptor',
+        //         'es.object.get-own-property-descriptors',
+        //         'es.object.keys',
+        //         'es.object.to-string',
+        //         'web.dom-collections.for-each',
+        //         'esnext.global-this',
+        //         'esnext.string.match-all'
+        //     ]
+        // }),
         // svg组件化支持
         svgLoader(),
         VITE_CDN ? cdn : null,

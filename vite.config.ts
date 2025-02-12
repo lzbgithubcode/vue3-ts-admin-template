@@ -32,6 +32,13 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
         build: {
             // https://cn.vitejs.dev/guide/build.html#browser-compatibility
             target: "es2015",
+            minify: 'terser',
+            terserOptions: {
+                compress: {
+                    drop_console: true,
+                    drop_debugger: true
+                }
+            },
             sourcemap: false,
             // 消除打包大小超过500kb警告
             chunkSizeWarningLimit: 4000,
